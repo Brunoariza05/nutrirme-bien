@@ -1,0 +1,14 @@
+{
+  "name": "nutrirme-bien",
+  "version": "1.0.0",
+  "description": "Landing page de Nutrirme Bien (Ani) - Node + Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "serverless-http": "^3.2.0"
+  }
+}

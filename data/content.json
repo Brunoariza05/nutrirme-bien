@@ -1,0 +1,102 @@
+{
+  "whatsappNumero": "5493511234567",
+
+  "hero": {
+    "porQuien": "POR ANI",
+    "marca": "Nutrirme",
+    "marcaDestacado": "Bien.",
+    "bio": "Creo en una nutrición real, simple y posible. Te ayudo a organizarte, entender lo que comés, y construir hábitos que se puedan sostener en el tiempo.",
+    "textoBotonWhatsapp": "Escribime por WhatsApp",
+    "imagen": "/img/ani.jpg"
+  },
+
+  "sobreMi": {
+    "titulo": "Una amiga que sabe de nutrición — sin el consultorio",
+    "bajada": "Soy Ani, y me apasiona hacer que comer bien sea algo alcanzable para cualquier persona con una vida real. Sin dietas imposibles, sin culpa. Desde recetas prácticas hasta cómo organizar tu semana alimentaria, esto es lo que trabajamos juntas.",
+    "pilares": [
+      { "icono": "🥗", "titulo": "Ideas simples para comer mejor", "descripcion": "Sin complicaciones. Con lo que ya tenés en casa." },
+      { "icono": "📅", "titulo": "Organización semanal práctica", "descripcion": "Meal prep sin estrés, que funciona de verdad." },
+      { "icono": "🌱", "titulo": "Hábitos sostenibles, sin extremos", "descripcion": "Nada de dietas imposibles. Cambios que duran en el tiempo." },
+      { "icono": "🔧", "titulo": "Thermomix como aliada", "descripcion": "Sacarle todo el jugo a la maquinita sin complicarse." },
+      { "icono": "📖", "titulo": "Educación nutricional aplicable", "descripcion": "Entender lo que comés, sin tecnicismos ni ciencia espacial." }
+    ]
+  },
+
+  "servicios": {
+    "titulo": "Elegí la forma de acompañamiento que más te sirva",
+    "bajada": "Cada propuesta está pensada para momentos distintos. No importa desde dónde arrancás — hay una opción para cada una.",
+    "items": [
+      {
+        "nombre": "Programa 180",
+        "subtitulo": "Acompañamiento Nutricional Mensual",
+        "modalidad": "Online",
+        "descripcion": "Un programa pensado para lograr cambios reales y sostenibles, con seguimiento constante.",
+        "precio": "Inicio $45.000 / Seguimiento $25.000/mes",
+        "mensajeWhatsapp": "Hola Ani! Quiero consultar por el Programa 180"
+      },
+      {
+        "nombre": "Asesoría Nutricional Online",
+        "subtitulo": "Vía Meet",
+        "modalidad": "Videollamada online",
+        "descripcion": "Un espacio individual para profundizar en tu historia, tus hábitos y tus objetivos.",
+        "precio": "Inversión: $50.000",
+        "mensajeWhatsapp": "Hola Ani! Quiero consultar por la Asesoría Nutricional Online"
+      },
+      {
+        "nombre": "Plan Alimentario Personalizado",
+        "subtitulo": "Modalidad formulario",
+        "modalidad": "Formulario, sin videollamada",
+        "descripcion": "Una opción práctica para quienes desean un plan adaptado a su realidad sin necesidad de videollamada.",
+        "precio": "Inversión: $40.000",
+        "mensajeWhatsapp": "Hola Ani! Quiero consultar por el Plan Alimentario Personalizado"
+      },
+      {
+        "nombre": "Planificación Semanal con Thermomix",
+        "subtitulo": "Suscripción mensual",
+        "modalidad": "Suscripción mensual",
+        "descripcion": "Para quienes tienen Thermomix y quieren delegar la organización de sus comidas.",
+        "precio": "Consultar disponibilidad",
+        "mensajeWhatsapp": "Hola Ani! Quiero consultar por la Planificación Semanal con Thermomix"
+      },
+      {
+        "nombre": "Consulta Nutricional Eventual",
+        "subtitulo": "",
+        "modalidad": "Videollamada online",
+        "descripcion": "Un encuentro individual para resolver una necesidad puntual, sin plan completo.",
+        "precio": "Inversión: $25.000",
+        "mensajeWhatsapp": "Hola Ani! Quiero consultar por una Consulta Nutricional Eventual"
+      }
+    ]
+  },
+
+  "recetas": {
+    "titulo": "Ricas, simples, de verdad",
+    "items": [
+      { "nombre": "Mousse de Chocolate", "categoria": "Postre fit", "descripcion": "Cremoso, sin culpa, con solo 3 ingredientes.", "imagen": "/img/recetas/mousse.jpg", "video": null },
+      { "nombre": "Brownie Fit", "categoria": "Horneado", "descripcion": "Húmedo por dentro, saludable de verdad.", "imagen": "/img/recetas/budin.jpg", "video": null },
+      { "nombre": "Tarta de Verduras", "categoria": "Almuerzo", "descripcion": "Para preparar y guardar durante la semana.", "imagen": "/img/recetas/tarta.jpg", "video": null },
+      { "nombre": "Tostadas con Palta y Huevo", "categoria": "Desayuno", "descripcion": "El desayuno que te lleva al mediodía sin hambre.", "imagen": "/img/recetas/tostadas.jpg", "video": null }
+    ]
+  },
+
+  "tips": {
+    "titulo": "Pequeñas cosas que cambian todo",
+    "items": [
+      { "categoria": "Proceso", "texto": "Los procesos llevan tiempo. No hay cambio real que ocurra de un día para el otro — y eso está perfectamente bien." },
+      { "categoria": "Familia", "texto": "Pautas para una buena alimentación en familia: variedad, sin restricciones extremas, y comer juntos cuando se pueda." },
+      { "categoria": "Organización", "texto": "Planificar la semana no es perfeccionismo. Es simplemente una forma de cuidarte sin tanto esfuerzo día a día." },
+      { "categoria": "Nutrición real", "texto": "No hay alimentos prohibidos. Hay contextos, cantidades y frecuencias. Eso es todo." }
+    ]
+  },
+
+  "footer": {
+    "tituloHablemos": "HABLEMOS",
+    "titulo": "¿Querés arrancar?",
+    "bajada": "Escribime sin compromiso. Contame qué te pasa, qué necesitás, y vemos cómo puedo ayudarte.",
+    "textoBotonWhatsapp": "Escribirle a Ani por WhatsApp",
+    "instagram": "@nutrirme.bien",
+    "instagramUrl": "https://www.instagram.com/nutrirme.bien/",
+    "disclaimer": "El contenido de esta página es informativo y educativo. No reemplaza una consulta con un profesional de la salud, ni aborda patologías específicas o condiciones médicas particulares.",
+    "copyright": "Nutrirme Bien © 2026"
+  }
+}
