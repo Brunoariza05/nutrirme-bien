@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Después abrís `http://localhost:3000` en el navegador.
+Después abrís `http://localhost:3000` en el navegador .
 
 ## Cómo editar el contenido
 
