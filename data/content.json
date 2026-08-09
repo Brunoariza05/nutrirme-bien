@@ -72,10 +72,10 @@
   "recetas": {
     "titulo": "Ricas, simples, de verdad",
     "items": [
-      { "nombre": "Mousse de Chocolate", "categoria": "Postre fit", "descripcion": "Cremoso, sin culpa, con solo 3 ingredientes.", "imagen": "/img/recetas/mousse.jpg", "video": null },
-      { "nombre": "Brownie Fit", "categoria": "Horneado", "descripcion": "Húmedo por dentro, saludable de verdad.", "imagen": "/img/recetas/budin.jpg", "video": null },
-      { "nombre": "Tarta de Verduras", "categoria": "Almuerzo", "descripcion": "Para preparar y guardar durante la semana.", "imagen": "/img/recetas/tarta.jpg", "video": null },
-      { "nombre": "Tostadas con Palta y Huevo", "categoria": "Desayuno", "descripcion": "El desayuno que te lleva al mediodía sin hambre.", "imagen": "/img/recetas/tostadas.jpg", "video": null }
+      { "nombre": "Mousse de Chocolate", "categoria": "Postre fit", "descripcion": "Cremoso, sin culpa, con solo 3 ingredientes.", "imagen": "/img/recetas/mousse.JPG", "video": null },
+      { "nombre": "Brownie Fit", "categoria": "Horneado", "descripcion": "Húmedo por dentro, saludable de verdad.", "imagen": "/img/recetas/budin.JPG", "video": null },
+      { "nombre": "Tarta de Verduras", "categoria": "Almuerzo", "descripcion": "Para preparar y guardar durante la semana.", "imagen": "/img/recetas/tarta.JPG", "video": null },
+      { "nombre": "Tostadas con Palta y Huevo", "categoria": "Desayuno", "descripcion": "El desayuno que te lleva al mediodía sin hambre.", "imagen": "/img/recetas/tostadas.JPG", "video": null }
     ]
   },
 
