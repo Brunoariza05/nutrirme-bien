@@ -5,20 +5,20 @@
     "porQuien": "POR ANI",
     "marca": "Nutrirme",
     "marcaDestacado": "Bien.",
-    "bio": "Creo en una nutrición real, simple y posible. Te ayudo a organizarte, entender lo que comés, y construir hábitos que se puedan sostener en el tiempo.",
+    "bio": "Nutrición consciente, real y sostenible. Te acompaño a aprender a comer mejor, sin extremos. Trabajamos juntos para construir hábitos de bienestar adaptados a vos y a tu rutina, que puedas sostener en el tiempo.",
     "textoBotonWhatsapp": "Escribime por WhatsApp",
     "imagen": "/img/ani.jpg"
   },
 
   "sobreMi": {
     "titulo": "Una amiga que sabe de nutrición — sin el consultorio",
-    "bajada": "Soy Ani, y me apasiona hacer que comer bien sea algo alcanzable para cualquier persona con una vida real. Sin dietas imposibles, sin culpa. Desde recetas prácticas hasta cómo organizar tu semana alimentaria, esto es lo que trabajamos juntas.",
+    "bajada": "Soy Ani, Licenciada en Nutrición. Me apasiona acompañar cada proceso, ayudándote a sanar tu relación con la comida para que deje de sentirse como una obligación y puedas empezar a disfrutar de elegir mejor, sin restricciones ni prohibiciones. Amo escuchar, conversar y trabajar en conjunto. Creo en los procesos que se construyen con paciencia, amor y cuidado, respetando tus tiempos y aprendiendo en el camino, hasta encontrar una forma de alimentarte que te haga bien y puedas sostener en el tiempo.",
     "pilares": [
-      { "icono": "🥗", "titulo": "Ideas simples para comer mejor", "descripcion": "Sin complicaciones. Con lo que ya tenés en casa." },
-      { "icono": "📅", "titulo": "Organización semanal práctica", "descripcion": "Meal prep sin estrés, que funciona de verdad." },
-      { "icono": "🌱", "titulo": "Hábitos sostenibles, sin extremos", "descripcion": "Nada de dietas imposibles. Cambios que duran en el tiempo." },
-      { "icono": "🔧", "titulo": "Thermomix como aliada", "descripcion": "Sacarle todo el jugo a la maquinita sin complicarse." },
-      { "icono": "📖", "titulo": "Educación nutricional aplicable", "descripcion": "Entender lo que comés, sin tecnicismos ni ciencia espacial." }
+      { "icono": "🥗", "titulo": "Ideas simples para comer mejor", "descripcion": "Sin complicaciones. Con ingredientes que todos tenemos y otros que aprendemos a incorporar mejor calidad nutricional" },
+      { "icono": "📅", "titulo": "Organización semanal práctica", "descripcion": "ideas de comidas sanas, simples, practicas" },
+      { "icono": "🌱", "titulo": "Hábitos sostenibles, sin extremos", "descripcion": "Nada de dietas imposibles. Trabajamos cambios que duran en el tiempo" },
+      { "icono": "🔧", "titulo": "Thermomix como aliada", "descripcion": "Sacale todo el jugo a tu robot de cocina para aprovecharla mejor" },
+      { "icono": "📖", "titulo": "Educación nutricional aplicable", "descripcion": "Entendé lo que comés para aprender a elegir mejor" }
     ]
   },
 
@@ -31,7 +31,7 @@
         "subtitulo": "Acompañamiento Nutricional Mensual",
         "modalidad": "Online",
         "descripcion": "Un programa pensado para lograr cambios reales y sostenibles, con seguimiento constante.",
-        "precio": "Inicio $45.000 / Seguimiento $25.000/mes",
+        "precio": "Inicio $40.000 / Seguimiento $25.000/mes",
         "mensajeWhatsapp": "Hola Ani! Quiero consultar por el Programa 180"
       },
       {
@@ -39,7 +39,7 @@
         "subtitulo": "Vía Meet",
         "modalidad": "Videollamada online",
         "descripcion": "Un espacio individual para profundizar en tu historia, tus hábitos y tus objetivos.",
-        "precio": "Inversión: $50.000",
+        "precio": "Inversión: $45.000",
         "mensajeWhatsapp": "Hola Ani! Quiero consultar por la Asesoría Nutricional Online"
       },
       {
@@ -47,7 +47,7 @@
         "subtitulo": "Modalidad formulario",
         "modalidad": "Formulario, sin videollamada",
         "descripcion": "Una opción práctica para quienes desean un plan adaptado a su realidad sin necesidad de videollamada.",
-        "precio": "Inversión: $40.000",
+        "precio": "Inversión: $35.000",
         "mensajeWhatsapp": "Hola Ani! Quiero consultar por el Plan Alimentario Personalizado"
       },
       {
@@ -55,7 +55,7 @@
         "subtitulo": "Suscripción mensual",
         "modalidad": "Suscripción mensual",
         "descripcion": "Para quienes tienen Thermomix y quieren delegar la organización de sus comidas.",
-        "precio": "Consultar disponibilidad",
+        "precio": "Inversión: $32.000 / mes",
         "mensajeWhatsapp": "Hola Ani! Quiero consultar por la Planificación Semanal con Thermomix"
       },
       {
@@ -63,7 +63,7 @@
         "subtitulo": "",
         "modalidad": "Videollamada online",
         "descripcion": "Un encuentro individual para resolver una necesidad puntual, sin plan completo.",
-        "precio": "Inversión: $25.000",
+        "precio": "Inversión: $28.000",
         "mensajeWhatsapp": "Hola Ani! Quiero consultar por una Consulta Nutricional Eventual"
       }
     ]
@@ -72,7 +72,6 @@
   "recetas": {
     "titulo": "Ricas, simples, de verdad",
     "items": [
-      { "nombre": "Mousse de Chocolate", "categoria": "Postre fit", "descripcion": "Cremoso, sin culpa, con solo 3 ingredientes.", "imagen": "/img/recetas/mousse.JPG", "video": null },
       { "nombre": "Brownie Fit", "categoria": "Horneado", "descripcion": "Húmedo por dentro, saludable de verdad.", "imagen": "/img/recetas/budin.JPG", "video": null },
       { "nombre": "Tarta de Verduras", "categoria": "Almuerzo", "descripcion": "Para preparar y guardar durante la semana.", "imagen": "/img/recetas/tarta.JPG", "video": null },
       { "nombre": "Tostadas con Palta y Huevo", "categoria": "Desayuno", "descripcion": "El desayuno que te lleva al mediodía sin hambre.", "imagen": "/img/recetas/tostadas.JPG", "video": null }
@@ -91,9 +90,9 @@
 
   "footer": {
     "tituloHablemos": "HABLEMOS",
-    "titulo": "¿Querés arrancar?",
-    "bajada": "Escribime sin compromiso. Contame qué te pasa, qué necesitás, y vemos cómo puedo ayudarte.",
-    "textoBotonWhatsapp": "Escribirle a Ani por WhatsApp",
+    "titulo": "¿Empezamos?",
+    "bajada": "Si sentís que es momento de hacer un cambio, escribime. Contame qué necesitás y vemos juntos la mejor opcion para vos",
+    "textoBotonWhatsapp": "Hablemos por WhatsApp",
     "instagram": "@nutrirme.bien",
     "instagramUrl": "https://www.instagram.com/nutrirme.bien/",
     "disclaimer": "El contenido de esta página es informativo y educativo. No reemplaza una consulta con un profesional de la salud, ni aborda patologías específicas o condiciones médicas particulares.",
