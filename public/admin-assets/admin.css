@@ -1,0 +1,51 @@
+:root {
+    --crema: #F5F1E6;
+    --crema-2: #FDF9EF;
+    --verde-oliva: #6B7854;
+    --verde-oscuro: #2F3B26;
+    --texto: #33362E;
+    --texto-suave: #6b6b60;
+    --borde: #E4DFCF;
+    --radius: 12px;
+    --font: "Inter", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font); color: var(--texto); background: var(--crema); }
+  
+  .login-body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: var(--verde-oscuro); }
+  .login-box { background: var(--crema-2); padding: 36px 32px; border-radius: var(--radius); width: 100%; max-width: 340px; display: flex; flex-direction: column; gap: 10px; }
+  .login-box h1 { font-size: 20px; margin: 0 0 4px; color: var(--verde-oscuro); }
+  .login-sub { margin: 0 0 12px; color: var(--texto-suave); font-size: 14px; }
+  .login-box label { font-size: 13px; font-weight: 600; margin-top: 6px; }
+  .login-box input { padding: 10px 12px; border: 1px solid var(--borde); border-radius: 8px; font-size: 14px; font-family: var(--font); }
+  .login-box button { margin-top: 14px; background: var(--verde-oliva); color: #fff; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; }
+  .login-error { background: #f8d7da; color: #842029; padding: 8px 10px; border-radius: 8px; font-size: 13px; margin: 0; }
+  
+  #admin-root { max-width: 900px; margin: 0 auto; padding: 24px 20px 80px; }
+  .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+  .admin-header h1 { font-size: 22px; color: var(--verde-oscuro); margin: 0; }
+  .logout-btn { background: none; border: 1px solid var(--borde); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; color: var(--texto-suave); }
+  .logout-btn:hover { background: #fff; }
+  
+  .admin-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 24px; border-bottom: 1px solid var(--borde); padding-bottom: 10px; }
+  .admin-tab { background: none; border: none; padding: 8px 14px; border-radius: 999px; cursor: pointer; font-size: 13px; font-weight: 600; color: var(--texto-suave); }
+  .admin-tab.active { background: var(--verde-oliva); color: #fff; }
+  .admin-panel { display: none; }
+  .admin-panel.active { display: block; }
+  
+  .admin-field { margin-bottom: 16px; }
+  .admin-field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--verde-oscuro); }
+  .admin-field input, .admin-field textarea { width: 100%; padding: 10px 12px; border: 1px solid var(--borde); border-radius: 8px; font-family: var(--font); font-size: 14px; background: #fff; }
+  .admin-field textarea { min-height: 70px; resize: vertical; }
+  .admin-hint { font-size: 12px; color: var(--texto-suave); margin: -2px 0 6px; }
+  
+  .admin-card { background: var(--crema-2); border: 1px solid var(--borde); border-radius: var(--radius); padding: 18px; margin-bottom: 16px; position: relative; }
+  .admin-card-remove { position: absolute; top: 12px; right: 12px; background: #fff; border: 1px solid var(--borde); width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 13px; color: #b23b3b; }
+  
+  .admin-add-btn { background: none; border: 2px dashed var(--borde); color: var(--verde-oliva); padding: 12px; width: 100%; border-radius: var(--radius); cursor: pointer; font-weight: 600; font-size: 13px; margin-bottom: 20px; }
+  .admin-add-btn:hover { background: var(--crema-2); }
+  
+  .admin-save-btn { background: var(--verde-oliva); color: #fff; border: none; padding: 12px 22px; border-radius: 999px; font-weight: 600; cursor: pointer; font-size: 14px; }
+  .admin-save-btn:disabled { opacity: 0.6; cursor: default; }
+  .admin-status { display: inline-block; margin-left: 12px; font-size: 13px; color: var(--verde-oliva); font-weight: 600; }
+  .admin-status.error { color: #b23b3b; }

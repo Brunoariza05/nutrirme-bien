@@ -1,6 +1,8 @@
 // Todo el contenido de la página sale de /api/content, que a su vez
 // lee data/content.json en el servidor. Para cambiar textos, precios,
 // recetas o tips: se edita SOLO ese archivo, no este JS.
+const ICON_WHATSAPP = `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.01 2C6.48 2 2 6.48 2 12c0 1.86.5 3.6 1.37 5.1L2 22l5.06-1.33A9.94 9.94 0 0 0 12.01 22C17.53 22 22 17.52 22 12S17.53 2 12.01 2Zm5.78 14.24c-.24.68-1.4 1.3-1.93 1.36-.5.06-1.02.27-3.4-.7-2.87-1.18-4.7-4.08-4.85-4.27-.14-.2-1.16-1.55-1.16-2.95s.73-2.1 1-2.38c.26-.29.56-.36.75-.36h.53c.17 0 .4-.06.62.48.24.58.8 2 .87 2.14.07.15.12.32.02.51-.1.2-.15.32-.3.5-.14.17-.3.38-.44.51-.14.14-.3.29-.13.58.17.29.76 1.28 1.64 2.08 1.13 1.02 2.08 1.34 2.37 1.5.29.14.46.12.63-.07.17-.2.72-.85.9-1.14.2-.3.4-.24.66-.14.27.1 1.7.82 2 .97.28.14.47.2.54.32.07.13.07.7-.17 1.36Z"/></svg>`;
+const ICON_INSTAGRAM = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>`;
 
 async function init() {
   const res = await fetch("/api/content");
@@ -9,14 +11,16 @@ async function init() {
   renderHero(data.hero, data.whatsappNumero);
   renderSobreMi(data.sobreMi);
   renderServicios(data.servicios, data.whatsappNumero);
-  renderRecetas(data.recetas);
+  renderRecetas(data.recetas, data.footer.instagramUrl);
   renderTips(data.tips);
   renderFooter(data.footer, data.whatsappNumero);
 
   setupCarousel("servicios-track", "servicios-prev", "servicios-next");
   setupCarousel("recetas-track", "recetas-prev", "recetas-next");
   setupCarousel("tips-track", "tips-prev", "tips-next");
+  document.body.classList.add("content-ready");
 }
+
 
 function waLink(numero, mensaje) {
   const texto = encodeURIComponent(mensaje || "Hola Ani!");
@@ -33,7 +37,7 @@ function renderHero(hero, numero) {
         <h1>${hero.marca}<br/><span class="destacado">${hero.marcaDestacado}</span></h1>
         <p class="bio">${hero.bio}</p>
         <a class="btn-whatsapp" href="${waLink(numero, "Hola Ani!")}" target="_blank" rel="noopener">
-          💬 ${hero.textoBotonWhatsapp}
+        ${ICON_WHATSAPP} ${hero.textoBotonWhatsapp}
         </a>
       </div>
       <div class="imagen-wrap">
@@ -67,15 +71,16 @@ function renderSobreMi(sobreMi) {
 // ---------- SERVICIOS ----------
 function renderServicios(servicios, numero) {
   const el = document.getElementById("servicios");
-  const cards = servicios.items.map(s => `
+  const cards = servicios.items.map((s, i) => `
     <div class="servicio-card">
       ${s.subtitulo ? `<p class="subtitulo">${s.subtitulo}</p>` : ""}
       <h3>${s.nombre}</h3>
       <p class="descripcion">${s.descripcion}</p>
       <p class="modalidad">${s.modalidad}</p>
       <p class="precio">${s.precio}</p>
+      <button class="ver-mas-btn" data-index="${i}">Ver más ›</button>
       <a class="btn-whatsapp" href="${waLink(numero, s.mensajeWhatsapp)}" target="_blank" rel="noopener">
-        💬 Consultar por WhatsApp
+        ${ICON_WHATSAPP} Consultar por WhatsApp
       </a>
     </div>
   `).join("");
@@ -96,10 +101,35 @@ function renderServicios(servicios, numero) {
       <div class="carousel-track" id="servicios-track">${cards}</div>
     </div>
   `;
+
+  el.querySelectorAll(".ver-mas-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      openServicioModal(servicios.items[Number(btn.dataset.index)]);
+    });
+  });
+}
+
+function openServicioModal(servicio) {
+  const incluye = (servicio.queIncluye || []).map(i => `<li>${i}</li>`).join("");
+  document.getElementById("modal-content").innerHTML = `
+    ${servicio.subtitulo ? `<p class="subtitulo">${servicio.subtitulo}</p>` : ""}
+    <h3>${servicio.nombre}</h3>
+    <p class="precio">${servicio.precio}</p>
+    <p class="detalle-label">Qué incluye:</p>
+    <ul>${incluye}</ul>
+    ${servicio.notaExtra ? `<p class="nota-extra">${servicio.notaExtra}</p>` : ""}
+  `;
+  document.getElementById("servicio-modal").hidden = false;
+  document.body.classList.add("modal-open");
+}
+
+function closeServicioModal() {
+  document.getElementById("servicio-modal").hidden = true;
+  document.body.classList.remove("modal-open");
 }
 
 // ---------- RECETAS ----------
-function renderRecetas(recetas) {
+function renderRecetas(recetas, instagramUrlGeneral) {
   const el = document.getElementById("recetas");
   const cards = recetas.items.map(r => `
     <div class="receta-card">
@@ -110,9 +140,9 @@ function renderRecetas(recetas) {
       <div class="body">
         <h3>${r.nombre}</h3>
         <p>${r.descripcion}</p>
-        <button class="ver-mas-btn" disabled title="Próximamente: video de preparación">
-          Ver más ›
-        </button>
+        <a class="ver-video-btn" href="${r.instagramUrl || instagramUrlGeneral}" target="_blank" rel="noopener">
+          <span class="play-icon">▶</span> Ver en Instagram
+        </a>
       </div>
     </div>
   `).join("");
@@ -171,11 +201,11 @@ function renderFooter(footer, numero) {
       <h2>${footer.titulo}</h2>
       <p class="bajada">${footer.bajada}</p>
       <a class="btn-whatsapp" href="${waLink(numero, 'Hola Ani!')}" target="_blank" rel="noopener">
-        💬 ${footer.textoBotonWhatsapp}
+      ${ICON_WHATSAPP} ${footer.textoBotonWhatsapp}
       </a>
       <br/>
       <a class="instagram" href="${footer.instagramUrl}" target="_blank" rel="noopener">
-        📷 ${footer.instagram}
+      ${ICON_INSTAGRAM} ${footer.instagram}
       </a>
       <p class="disclaimer">${footer.disclaimer}</p>
       <p class="copyright">${footer.copyright}</p>
@@ -203,3 +233,11 @@ function setupCarousel(trackId, prevId, nextId) {
 }
 
 init();
+
+document.getElementById("modal-close-btn").addEventListener("click", closeServicioModal);
+document.getElementById("servicio-modal").addEventListener("click", (e) => {
+  if (e.target.id === "servicio-modal") closeServicioModal(); // click afuera del recuadro
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeServicioModal();
+});

@@ -32,7 +32,14 @@
         "modalidad": "Online",
         "descripcion": "Un programa pensado para lograr cambios reales y sostenibles, con seguimiento constante.",
         "precio": "Inicio $40.000 / Seguimiento $25.000/mes",
-        "mensajeWhatsapp": "Hola Ani! Quiero consultar por el Programa 180"
+        "mensajeWhatsapp": "Hola Ani! Quiero consultar por el Programa 180",
+        "queIncluye": [
+          "Evaluación inicial completa por videollamada",
+          "Plan alimentario personalizado",
+          "Seguimiento semanal con contacto directo por WhatsApp o Google Meet",
+          "Ajustes según tu progreso",
+          "Espacio grupal de acompañamiento (opcional)"
+        ]
       },
       {
         "nombre": "Asesoría Nutricional Online",
@@ -40,7 +47,13 @@
         "modalidad": "Videollamada online",
         "descripcion": "Un espacio individual para profundizar en tu historia, tus hábitos y tus objetivos.",
         "precio": "Inversión: $45.000",
-        "mensajeWhatsapp": "Hola Ani! Quiero consultar por la Asesoría Nutricional Online"
+        "mensajeWhatsapp": "Hola Ani! Quiero consultar por la Asesoría Nutricional Online",
+        "queIncluye": [
+          "Videollamada personalizada de 45 a 60 minutos",
+          "Plan alimentario 100% adaptado a vos, entregado dentro de los 5 días hábiles",
+          "Guía práctica para organizar tus comidas",
+          "Seguimiento a las 2 semanas para evaluar avances y hacer ajustes"
+        ]
       },
       {
         "nombre": "Plan Alimentario Personalizado",
@@ -48,7 +61,14 @@
         "modalidad": "Formulario, sin videollamada",
         "descripcion": "Una opción práctica para quienes desean un plan adaptado a su realidad sin necesidad de videollamada.",
         "precio": "Inversión: $35.000",
-        "mensajeWhatsapp": "Hola Ani! Quiero consultar por el Plan Alimentario Personalizado"
+        "mensajeWhatsapp": "Hola Ani! Quiero consultar por el Plan Alimentario Personalizado",
+        "queIncluye": [
+          "Completás un formulario detallado (salud, rutina, horarios, preferencias, objetivos)",
+          "Plan alimentario personalizado adaptado a tu rutina",
+          "Guía práctica para organizar tus comidas",
+          "Entrega dentro de los 5 días hábiles vía mail",
+          "Seguimiento a las 2 semanas"
+        ]
       },
       {
         "nombre": "Planificación Semanal con Thermomix",
@@ -56,7 +76,14 @@
         "modalidad": "Suscripción mensual",
         "descripcion": "Para quienes tienen Thermomix y quieren delegar la organización de sus comidas.",
         "precio": "Inversión: $32.000 / mes",
-        "mensajeWhatsapp": "Hola Ani! Quiero consultar por la Planificación Semanal con Thermomix"
+        "mensajeWhatsapp": "Hola Ani! Quiero consultar por la Planificación Semanal con Thermomix",
+        "queIncluye": [
+          "Formulario inicial sobre tu rutina, objetivos y gustos",
+          "Planificación semanal completa (desayuno, almuerzo, cena y/o meriendas)",
+          "Recetas seleccionadas de Cookidoo, adaptadas a tus objetivos",
+          "Sugerencias de preparación anticipada (cocina adelantada)",
+          "Lista de compras organizada"
+        ]
       },
       {
         "nombre": "Consulta Nutricional Eventual",
@@ -64,7 +91,13 @@
         "modalidad": "Videollamada online",
         "descripcion": "Un encuentro individual para resolver una necesidad puntual, sin plan completo.",
         "precio": "Inversión: $28.000",
-        "mensajeWhatsapp": "Hola Ani! Quiero consultar por una Consulta Nutricional Eventual"
+        "mensajeWhatsapp": "Hola Ani! Quiero consultar por una Consulta Nutricional Eventual",
+        "queIncluye": [
+          "Videollamada de 30 a 40 minutos",
+          "Análisis del tema puntual a trabajar",
+          "Recomendaciones prácticas y aplicables",
+          "Resolución de dudas en el momento"
+        ]
       }
     ]
   },
@@ -72,9 +105,9 @@
   "recetas": {
     "titulo": "Ricas, simples, de verdad",
     "items": [
-      { "nombre": "Brownie Fit", "categoria": "Horneado", "descripcion": "Húmedo por dentro, saludable de verdad.", "imagen": "/img/recetas/budin.JPG", "video": null },
-      { "nombre": "Tarta de Verduras", "categoria": "Almuerzo", "descripcion": "Para preparar y guardar durante la semana.", "imagen": "/img/recetas/tarta.JPG", "video": null },
-      { "nombre": "Tostadas con Palta y Huevo", "categoria": "Desayuno", "descripcion": "El desayuno que te lleva al mediodía sin hambre.", "imagen": "/img/recetas/tostadas.JPG", "video": null }
+      { "nombre": "Brownie Fit", "categoria": "Horneado", "descripcion": "Húmedo por dentro, saludable de verdad.", "imagen": "/img/recetas/budin.JPG", "instagramUrl": "https://www.instagram.com/reel/DWboeukDVV7/" },
+      { "nombre": "Tarta de Verduras", "categoria": "Almuerzo", "descripcion": "Para preparar y guardar durante la semana.", "imagen": "/img/recetas/tarta.JPG", "instagramUrl": "https://www.instagram.com/reel/DVbHnhgEdcn/" },
+      { "nombre": "Tostadas con Palta y Huevo", "categoria": "Desayuno", "descripcion": "El desayuno que te lleva al mediodía sin hambre.", "imagen": "/img/recetas/tostadas.JPG", "instagramUrl": "https://www.instagram.com/p/Cf8-eWYO1NS/" }
     ]
   },
 
