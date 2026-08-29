@@ -279,6 +279,8 @@ h1, h2, h3 {
   font-size: 12px;
   font-style: italic;
   color: #6f7860;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .ver-video-btn {

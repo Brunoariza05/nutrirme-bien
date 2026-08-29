@@ -208,8 +208,7 @@ function renderFooter(footer, numero) {
       ${ICON_INSTAGRAM} ${footer.instagram}
       </a>
       <p class="disclaimer">${footer.disclaimer}</p>
-      <p class="copyright">${footer.copyright}</p>
-    </div>
+      <a class="copyright" href="/admin">${footer.copyright}</a>    </div>
   `;
 }
 
