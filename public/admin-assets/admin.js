@@ -68,6 +68,55 @@ function campoTextarea(label, id, value, hint) {
       <textarea id="${id}">${escapeHtml(value || "")}</textarea>
     </div>`;
 }
+
+function campoImagen(label, id, value, hint) {
+  return `
+    <div class="admin-field">
+      <label for="${id}">${label}</label>
+      ${hint ? `<p class="admin-hint">${hint}</p>` : ""}
+      <input type="text" id="${id}" value="${escapeAttr(value || "")}" placeholder="/img/... o subí una foto abajo" />
+      <div class="admin-upload-row">
+        <input type="file" id="${id}-file" accept="image/*" />
+        <button type="button" class="admin-upload-btn" data-target="${id}">Subir foto</button>
+        <span class="admin-upload-status" id="${id}-status"></span>
+      </div>
+      <img class="admin-preview" id="${id}-preview" src="${escapeAttr(value || "")}" ${value ? "" : "hidden"} />
+    </div>`;
+}
+
+function setupImageUploaders(scopeEl) {
+  scopeEl.querySelectorAll(".admin-upload-btn").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const targetId = btn.dataset.target;
+      const fileInput = document.getElementById(`${targetId}-file`);
+      const statusEl = document.getElementById(`${targetId}-status`);
+      const urlInput = document.getElementById(targetId);
+      const preview = document.getElementById(`${targetId}-preview`);
+
+      if (!fileInput.files[0]) {
+        statusEl.textContent = "Elegí un archivo primero";
+        return;
+      }
+      statusEl.textContent = "Subiendo...";
+      const formData = new FormData();
+      formData.append("imagen", fileInput.files[0]);
+
+      try {
+        const res = await fetch("/api/admin/upload-image", { method: "POST", body: formData });
+        if (!res.ok) throw new Error("fallo la subida");
+        const data = await res.json();
+        urlInput.value = data.url;
+        preview.src = data.url;
+        preview.hidden = false;
+        statusEl.textContent = "✓ Subida";
+        setTimeout(() => { statusEl.textContent = ""; }, 2500);
+      } catch (err) {
+        statusEl.textContent = "Error al subir, probá de nuevo";
+      }
+    });
+  });
+}
+
 function escapeAttr(str) { return String(str).replace(/"/g, "&quot;"); }
 function escapeHtml(str) { return String(str).replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
 function botonGuardar(seccion) {
@@ -105,12 +154,11 @@ function renderGeneral() {
     ${campoTexto("Palabra destacada (en cursiva, debajo)", "hero-marcaDestacado", hero.marcaDestacado)}
     ${campoTextarea("Bio corta", "hero-bio", hero.bio)}
     ${campoTexto("Texto del botón de WhatsApp", "hero-textoBotonWhatsapp", hero.textoBotonWhatsapp)}
-    ${campoTexto("Ruta de la foto principal", "hero-imagen", hero.imagen, "Ej: /img/hero-placeholder.jpg")}
-    ${botonGuardar("hero")}
+    ${campoImagen("Foto principal", "hero-imagen", hero.imagen, "Subí una foto o pegá un link manualmente")}    ${botonGuardar("hero")}
     <h2 style="margin-top:36px;">Número de WhatsApp</h2>
     ${campoTexto("Número (con código de país, sin + ni espacios)", "whatsappNumero", CONTENT.whatsappNumero, "Ej: 5493511234567 — a este número llegan TODOS los botones de WhatsApp del sitio")}
-    ${botonGuardar("whatsappNumero")}
-  `;
+    ${botonGuardar("whatsappNumero")}`,
+    setupImageUploaders(panel);
 
   panel.querySelector('[data-save="hero"]').addEventListener("click", () => {
     guardarSeccion("hero", {
@@ -241,9 +289,9 @@ function renderRecetas() {
         ${campoTexto("Nombre de la receta", `rec-nombre-${i}`, it.nombre)}
         ${campoTexto("Categoría (ej: Postre fit)", `rec-categoria-${i}`, it.categoria)}
         ${campoTextarea("Descripción corta", `rec-descripcion-${i}`, it.descripcion)}
-        ${campoTexto("Ruta de la imagen", `rec-imagen-${i}`, it.imagen, "Ej: /img/recetas/mousse.jpg")}
-        ${campoTexto("Link de Instagram (opcional)", `rec-ig-${i}`, it.instagramUrl || "", "Si lo dejás vacío, usa el link general de Instagram del footer")}
-      `;
+        ${campoImagen("Foto de la receta", `rec-imagen-${i}`, it.imagen)}
+        ${campoTexto("Link de Instagram (opcional)", `rec-ig-${i}`, it.instagramUrl || "", "Si lo dejás vacío, usa el link general de Instagram del footer")}`,
+        setupImageUploaders(lista);
       lista.appendChild(card);
     });
     lista.querySelectorAll("[data-remove]").forEach((btn) => {

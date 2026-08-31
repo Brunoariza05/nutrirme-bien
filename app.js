@@ -4,6 +4,8 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const { getDb } = require("./lib/db");
+const multer = require("multer");
+const cloudinary = require("cloudinary").v2;
 
 const app = express();
 
@@ -11,6 +13,16 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser(process.env.COOKIE_SECRET || "cambiar-en-produccion"));
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 8 * 1024 * 1024 }, // 8MB máximo por foto
+});
 
 app.get("/api/content", async (req, res) => {
   try {
@@ -136,6 +148,23 @@ app.post("/api/admin/save/:seccion", requireAuth, async (req, res) => {
     console.error(`Error guardando sección "${seccion}":`, err);
     res.status(500).json({ error: "No se pudo guardar" });
   }
+});
+
+app.post("/api/admin/upload-image", requireAuth, upload.single("imagen"), (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ error: "No se recibió ningún archivo" });
+  }
+  const stream = cloudinary.uploader.upload_stream(
+    { folder: "nutrirme-bien" },
+    (err, result) => {
+      if (err) {
+        console.error("Error subiendo a Cloudinary:", err);
+        return res.status(500).json({ error: "No se pudo subir la imagen" });
+      }
+      res.json({ url: result.secure_url });
+    }
+  );
+  stream.end(req.file.buffer);
 });
 
 module.exports = app;
