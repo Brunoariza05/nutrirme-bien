@@ -119,8 +119,8 @@ function setupImageUploaders(scopeEl) {
 
 function escapeAttr(str) { return String(str).replace(/"/g, "&quot;"); }
 function escapeHtml(str) { return String(str).replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
-function botonGuardar(seccion) {
-  return `<button class="admin-save-btn" data-save="${seccion}">Guardar cambios</button>
+function botonGuardar(seccion, texto) {
+  return `<button class="admin-save-btn" data-save="${seccion}">${texto || "Guardar cambios"}</button>
     <span class="admin-status" id="status-${seccion}"></span>`;
 }
 
@@ -154,10 +154,11 @@ function renderGeneral() {
     ${campoTexto("Palabra destacada (en cursiva, debajo)", "hero-marcaDestacado", hero.marcaDestacado)}
     ${campoTextarea("Bio corta", "hero-bio", hero.bio)}
     ${campoTexto("Texto del botón de WhatsApp", "hero-textoBotonWhatsapp", hero.textoBotonWhatsapp)}
-    ${campoImagen("Foto principal", "hero-imagen", hero.imagen, "Subí una foto o pegá un link manualmente")}    ${botonGuardar("hero")}
+    ${campoImagen("Foto principal", "hero-imagen", hero.imagen, "Subí una foto o pegá un link manualmente")}    
+    ${botonGuardar("hero", "Guardar Hero")}
     <h2 style="margin-top:36px;">Número de WhatsApp</h2>
     ${campoTexto("Número (con código de país, sin + ni espacios)", "whatsappNumero", CONTENT.whatsappNumero, "Ej: 5493511234567 — a este número llegan TODOS los botones de WhatsApp del sitio")}
-    ${botonGuardar("whatsappNumero")}`,
+    ${botonGuardar("whatsappNumero", "Guardar número de WhatsApp")}`,
     setupImageUploaders(panel);
 
   panel.querySelector('[data-save="hero"]').addEventListener("click", () => {
